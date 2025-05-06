@@ -2,7 +2,7 @@
 
 Ruby on Rails Getting Started docs: https://guides.rubyonrails.org/getting_started.html
 
-Checkpoint: https://guides.rubyonrails.org/getting_started.html#instance-variables
+Checkpoint: https://guides.rubyonrails.org/getting_started.html#controllers-actions
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
@@ -45,3 +45,24 @@ Reference: https://guides.rubyonrails.org/getting_started.html#creating-a-databa
 * Run `bin/rails console`
 
 Reference: https://guides.rubyonrails.org/getting_started.html#rails-console
+
+### Reload Changes
+* Run this command if you have modified your codes but still keeping the console open and want to see the reflected changes: `reload!`
+
+## Rails Routing
+![Rails Routing in MVC](./docs/assets/rails-routing-mvc.jpg "Rails Routing in MVC")
+
+* To define the routes, modify the `config/routes.rb`, example:
+  ```ruby
+  Rails.application.routes.draw do
+    get "/products", to: "products#index"
+  end
+  ```
+* To create all CRUD routes for specific route like `/products`, we can just register it like this instead:
+  ```ruby
+  resources :products
+  ```
+
+* Generate the controller command: `bin/rails generate controller Products index --skip-routes`
+
+Reference: https://guides.rubyonrails.org/getting_started.html#routes
