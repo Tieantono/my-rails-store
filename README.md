@@ -163,3 +163,6 @@ Reference: https://guides.rubyonrails.org/getting_started.html#deleting-products
   ```
 
 ## Authentication
+* To rollout your own authentication, run: `bin/rails generate authentication`
+* It will generate a new DB migration, run the migration again.
+* We can use Rails console to quick creating an user.
