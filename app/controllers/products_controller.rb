@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   # %i is a shorthand for creating an array of symbols.
+  allow_unauthenticated_access only: %i[ index show ]
   before_action :set_product, only: %i[ show edit update destroy ]
 
   def index
@@ -50,6 +51,6 @@ class ProductsController < ApplicationController
 
     # Validate the product params from the request.
     def product_params
-      params.expect(product: [ :name ])
+      params.expect(product: [ :name, :description, :featured_image ])
     end
 end

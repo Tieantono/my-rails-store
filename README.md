@@ -2,7 +2,7 @@
 
 Ruby on Rails Getting Started docs: https://guides.rubyonrails.org/getting_started.html
 
-Checkpoint: https://guides.rubyonrails.org/getting_started.html#adding-authentication
+Checkpoint: https://guides.rubyonrails.org/getting_started.html#file-uploads-with-active-storage
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
@@ -164,5 +164,30 @@ Reference: https://guides.rubyonrails.org/getting_started.html#deleting-products
 
 ## Authentication
 * To rollout your own authentication, run: `bin/rails generate authentication`
+* This will creata a DB migration that includes User & Session models.
 * It will generate a new DB migration, run the migration again.
 * We can use Rails console to quick creating an user.
+* It is still recommended that we don't rollout our own authentication, it is recommended to use OpenID Connect compliant service such as Keycloak.
+* For complex authentication handling we can use [Devise](https://github.com/heartcombo/devise).
+
+Reference: https://guides.rubyonrails.org/getting_started.html#adding-authentication
+
+## Caching
+* Rails includes Solid Cache that can be used for caching specific parts of a page to improve the performance.
+
+## Rich Text Contents
+* Rails provides Action Text to implement the rich text contents such as rich text field easily.
+* Run the installer and migrate the DB:
+  ```bash
+  bin/rails action_text:install
+  bundle install
+  bin/rails db:migrate
+  ```
+
+Reference: https://guides.rubyonrails.org/getting_started.html#rich-text-fields-with-action-text
+
+## File Uploads
+* Rails provides Active Storage to implement the file upload features to local disk or cloud storage easily.
+* Action Text is built upon it.
+
+Reference: https://guides.rubyonrails.org/getting_started.html#file-uploads-with-active-storage
